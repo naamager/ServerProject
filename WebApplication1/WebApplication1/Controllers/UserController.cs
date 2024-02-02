@@ -24,8 +24,20 @@ namespace Recipe_site.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromForm] UserDto user)
         {
+            foreach (var item in user.files)
+            {
+                var myPath = Path.Combine(Environment.CurrentDirectory + "/Images/" + item.FileName);
+                using (FileStream fs = new FileStream(myPath, FileMode.Create)) { 
+                
+                item.CopyTo(fs);
+                    fs.Close();
+                }
+            }
+          
+
+            //add database
         }
 
         // PUT api/<UserController>/5
