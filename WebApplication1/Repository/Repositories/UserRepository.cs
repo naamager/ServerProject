@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interface;
 using System;
 using System.Collections.Generic;
@@ -16,28 +17,30 @@ namespace Repository.Repositories
             this.context = context;
         }
 
-        public void Add(User item)
+        public async Task Add(User item)
         {
-            this.context.Users.Add(item);
-            this.context.save();
+            await this.context.Users.AddAsync(item);
+           await this.context.save();
         }
 
-        public void Delete(User item)
+        public async Task Delete(int item)
         {
-            this.context.Users.Remove(item);
+            this.context.Users.Remove(context.Users.FirstOrDefault(x => x.Id == item));
+
+            await context.save();
         }
 
-        public List<User> GetAll()
+        public async Task<List<User>> GetAll()
         {
-            return this.context.Users.ToList();
+            return  await this.context.Users.ToListAsync();
         }
 
-        public User GetById(int id)
+        public async Task<User> GetById(int id)
         {
-           return this.context.Users.FirstOrDefault(x => x.Id == id);
+           return await context.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public void Update(int id, User item)
+        public async Task Update(int id, User item)
         {
             var user = this.context.Users.FirstOrDefault(x => x.Id == id);
             user.Name = item.Name;

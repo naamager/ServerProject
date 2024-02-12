@@ -15,7 +15,7 @@ namespace Repository.Repositories
         {
 
             services.AddScoped(typeof(IRepository<Category>), typeof(CategoryRepository));
-            services.AddScoped(typeof(IRepository<Picture>), typeof(PictureRepository));
+            
             services.AddScoped(typeof(IRepository<Recipe>), typeof(RecipeRepository));
             services.AddScoped(typeof(IRepository<Response>), typeof(ResponseRepository));
             services.AddScoped(typeof(IRepository<User>), typeof(UserRepository));

@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using Repository.Entity;
 using Repository.Interface;
 using System;
@@ -16,32 +17,34 @@ namespace Repository.Repositories
         {
             this.context = context;
         }
-        public void Add(Response item)
+        public async Task Add(Response item)
         {
-            this.context.Responses.Add(item);
-            this.context.save();
+          await this.context.Responses.AddAsync(item);
+           await this.context.save();
         }
 
-        public void Delete(Response item)
+        public async Task Delete(int item)
         {
-            this.context.Responses.Remove(item);
+            this.context.Responses.Remove(context.Responses.FirstOrDefault(x => x.Id == item));
+
+            await context.save();
         }
 
-        public List<Response> GetAll()
+        public async Task<List<Response>> GetAll()
         {
-            return this.context.Responses.ToList();
+            return await this.context.Responses.ToListAsync();
         }
 
-        public Response GetById(int id)
+        public async Task<Response> GetById(int id)
         {
-            return this.context.Responses.FirstOrDefault(x => x.Id == id);
+            return await context.Responses.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public void Update(int id, Response item)
+        public async Task Update(int id, Response item)
         {
             var Response = this.context.Responses.FirstOrDefault(x => x.Id == id);
             Response.Name = item.Name;
-            this.context.save();
+            await this.context.save();
         }
     }
 }

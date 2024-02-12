@@ -11,7 +11,6 @@ namespace Repository.Interface
     public interface IContext
     {
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Picture> Pictures { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Response> Responses { get; set; }

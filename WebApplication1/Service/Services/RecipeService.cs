@@ -21,29 +21,29 @@ namespace Service.Services
             this._repository = repository;
             this.mapper = map;
         }
-        public void Add(RecipeDto service)
+        public async Task Add(RecipeDto service)
         {
-            this._repository.Add(mapper.Map<Recipe>(service));
+           await _repository.Add(mapper.Map<Recipe>(service));
         }
 
-        public List<RecipeDto> GetAll()
+        public async Task<List<RecipeDto>> GetAll()
         {
-            return mapper.Map<List<RecipeDto>>(_repository.GetAll());
+            return mapper.Map<List<RecipeDto>>(await _repository.GetAll());
         }
 
-        public RecipeDto GetById(int id)
+        public async Task<RecipeDto> GetById(int id)
         {
-            return mapper.Map<RecipeDto>(_repository.GetById(id));
+            return mapper.Map<RecipeDto>(await _repository.GetById(id));
         }
 
-        public void Remove(RecipeDto service)
+        public async Task Remove(int id)
         {
-            _repository.Delete(mapper.Map<Recipe>(service));
+            await _repository.Delete(id);
         }
 
-        public void Update(int id, RecipeDto service)
+        public async Task Update(int id, RecipeDto service)
         {
-            _repository.Update(id, mapper.Map<Recipe>(service));
+          await  _repository.Update(id, mapper.Map<Recipe>(service));
         }
     }
 }

@@ -18,14 +18,15 @@ namespace Repository.Repositories
         }
         public async Task Add(Category item)
         {
-            await this.context.Categories.Add(item);
+            await this.context.Categories.AddAsync(item);
             await this.context.save();
         }
 
-        public async Task Delete(Category item)
+        public async Task Delete(int id)
         {
-             this.context.Categories.Remove(item);
-            
+             this.context.Categories.Remove(context.Categories.FirstOrDefault(x => x.Id == id));
+            await context.save();
+
         }
 
         public async Task <List<Category>> GetAll()
@@ -35,7 +36,7 @@ namespace Repository.Repositories
 
         public async Task <Category> GetById(int id)
         {
-            return await context.Categories.FirstOrDefault(x => x.Id == id);
+            return await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task Update(int id, Category item)

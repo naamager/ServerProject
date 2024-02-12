@@ -8,12 +8,12 @@ namespace Service.Interfaces
 {
     public interface IService<T> where T : class
     {
-        public void Add(T service);
-        public void Remove(T service);
+        public Task Add(T service);
+        public Task Remove(int id);
 
-        public T GetById(int id);
-        public List<T> GetAll();
+        public Task<T> GetById(int id);
+        public Task<List<T>> GetAll();
 
-        public void Update(int id, T service);
+        public Task Update(int id, T service);
     }
 }

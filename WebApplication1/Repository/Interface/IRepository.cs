@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ namespace Repository.Interface
     {
         public Task  Add(T item);
         public Task  Update(int id, T item);
-        public Task  Delete(T item);
+        public Task  Delete(int id);
         public Task <T> GetById(int id);
         public Task <List<T>> GetAll();
-
+        //void Delete(Category category);
     }
 }

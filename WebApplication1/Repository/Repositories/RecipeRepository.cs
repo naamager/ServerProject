@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using Repository.Interface;
 using System;
 using System.Collections.Generic;
@@ -16,33 +17,34 @@ namespace Repository.Repositories
         {
             this.context = context;
         }
-        public void Add(Recipe item)
+        public async Task Add(Recipe item)
         {
-            this.context.Recipes.Add(item);
-            this.context.save();
+            await this.context.Recipes.AddAsync(item);
+            await this.context.save();
         }
 
-        public void Delete(Recipe item)
+        public async Task Delete(int item)
         {
-            this.context.Recipes.Remove(item);
+            this.context.Recipes.Remove(context.Recipes.FirstOrDefault(x => x.Id == item));
+            await context.save();
         }
 
-        public List<Recipe> GetAll()
+        public async Task<List<Recipe>> GetAll()
         {
-            return this.context.Recipes.ToList();
+            return await this.context.Recipes.ToListAsync();
         }
 
-        public Recipe GetById(int id)
+        public async Task<Recipe> GetById(int id)
         {
-            return this.context.Recipes.FirstOrDefault(x => x.Id == id);
+            return await context.Recipes.FirstOrDefaultAsync(x => x.Id == id);
 
         }
 
-        public void Update(int id, Recipe item)
+        public async Task Update(int id, Recipe item)
         {
             var Recipe = this.context.Recipes.FirstOrDefault(x => x.Id == id);
             Recipe.Name = item.Name;
-            this.context.save();
+            await this.context.save();
         }
     }
 }

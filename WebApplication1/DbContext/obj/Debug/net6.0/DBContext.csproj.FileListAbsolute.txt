@@ -1,0 +1,17 @@
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.csproj.AssemblyReference.cache
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.AssemblyInfoInputs.cache
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.AssemblyInfo.cs
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.csproj.CoreCompileInputs.cache
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\bin\Debug\net6.0\DBContext.deps.json
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\bin\Debug\net6.0\DBContext.runtimeconfig.json
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\bin\Debug\net6.0\DBContext.dll
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\bin\Debug\net6.0\DBContext.pdb
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\bin\Debug\net6.0\Repository.dll
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\bin\Debug\net6.0\Repository.pdb
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.csproj.CopyComplete
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.dll
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\refint\DBContext.dll
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.pdb
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\DBContext.genruntimeconfig.cache
+C:\Users\105\Documents\GitHub\ServerProject\WebApplication1\DbContext\obj\Debug\net6.0\ref\DBContext.dll

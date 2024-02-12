@@ -15,8 +15,8 @@ namespace Repository.Entity
 
         public int NumOfViews { get; set; }
 
-        public virtual ICollection<Picture> Pictures { get; set; }
         public virtual ICollection<Response> Responses { get; set; }
+
         public string TheRecipe { get; set; }
         
        

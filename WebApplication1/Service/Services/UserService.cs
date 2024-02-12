@@ -20,29 +20,29 @@ namespace Service.Services
             this._repository = repository;
             this.mapper = map;
         }
-        public void Add(UserDto service)
+        public async Task Add(UserDto service)
         {
-            this._repository.Add(mapper.Map<User>(service));
+            await _repository.Add(mapper.Map<User>(service));
         }
 
-        public List<UserDto> GetAll()
+        public async Task< List<UserDto>> GetAll()
         {
-            return mapper.Map<List<UserDto>>(_repository.GetAll());
+            return mapper.Map<List<UserDto>>(await _repository.GetAll());
         }
 
-        public UserDto GetById(int id)
+        public async Task<UserDto >GetById(int id)
         {
-            return mapper.Map<UserDto>(_repository.GetById(id));
+            return mapper.Map<UserDto>(await _repository.GetById(id));
         }
 
-        public void Remove(UserDto service)
+        public async Task Remove(int id)
         {
-            _repository.Delete(mapper.Map<User>(service));
+            await _repository.Delete(id);
         }
 
-        public void Update(int id, UserDto service)
+        public async Task Update(int id, UserDto service)
         {
-            _repository.Update(id, mapper.Map<User>(service));
+            await _repository.Update(id, mapper.Map<User>(service));
         }
     }
 }
