@@ -42,8 +42,16 @@ namespace Repository.Repositories
 
         public async Task Update(int id, Recipe item)
         {
-            var Recipe = this.context.Recipes.FirstOrDefault(x => x.Id == id);
+            var Recipe = await context.Recipes.FirstOrDefaultAsync(x => x.Id == id);
             Recipe.Name = item.Name;
+            Recipe.Id = item.Id;
+            Recipe.Categories = item.Categories;
+            Recipe.NumOfViews = item.NumOfViews;
+            Recipe.Responses = item.Responses;
+            Recipe.Pictures = item.Pictures;
+            Recipe.RecipeDescription = item.RecipeDescription;
+            Recipe.Ingredients = item.Ingredients;
+            Recipe.Preparation = item.Preparation;
             await this.context.save();
         }
     }

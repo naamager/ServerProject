@@ -52,6 +52,10 @@ namespace DBContext.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Ingredients")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -59,9 +63,20 @@ namespace DBContext.Migrations
                     b.Property<int>("NumOfViews")
                         .HasColumnType("int");
 
-                    b.Property<string>("TheRecipe")
+                    b.Property<string>("Pictures")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Preparation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RecipeDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UploadDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -76,11 +91,14 @@ namespace DBContext.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AnswerOnResponse")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ResponseOnRecipeId")
+                    b.Property<int>("RecipeId")
                         .HasColumnType("int");
 
                     b.Property<string>("TheResponse")
@@ -89,7 +107,7 @@ namespace DBContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ResponseOnRecipeId");
+                    b.HasIndex("RecipeId");
 
                     b.ToTable("Responses");
                 });
@@ -124,13 +142,11 @@ namespace DBContext.Migrations
 
             modelBuilder.Entity("Repository.Entity.Response", b =>
                 {
-                    b.HasOne("Repository.Entity.Recipe", "ResponseOnRecipe")
+                    b.HasOne("Repository.Entity.Recipe", null)
                         .WithMany("Responses")
-                        .HasForeignKey("ResponseOnRecipeId")
+                        .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("ResponseOnRecipe");
                 });
 
             modelBuilder.Entity("Repository.Entity.Recipe", b =>

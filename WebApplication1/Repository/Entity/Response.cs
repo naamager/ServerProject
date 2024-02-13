@@ -10,12 +10,13 @@ namespace Repository.Entity
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
         public string TheResponse { get; set; }
 
-        public virtual Recipe ResponseOnRecipe { get; set; }
+        public int RecipeId { get; set; }
 
 
-
+        public int AnswerOnResponse { get; set; }
 
 
     }

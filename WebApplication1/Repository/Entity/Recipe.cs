@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Repository.Entity
 {
@@ -14,10 +16,16 @@ namespace Repository.Entity
         public virtual ICollection<Category> Categories { get; set; }
 
         public int NumOfViews { get; set; }
+       
 
         public virtual ICollection<Response> Responses { get; set; }
 
-        public string TheRecipe { get; set; }
+        public string Pictures { get; set; }
+        public DateTime UploadDate { get; set; }
+
+        public string RecipeDescription { get; set; }
+        public string Preparation { get; set; }
+        public string Ingredients { get; set; }
         
        
     }

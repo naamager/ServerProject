@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Clbm9FtxNZlkEtLitZLcw1TuejQ1O9OP2rERvgLv+AE9X/M8BZuVtLXS/14e41b2VxMZ9Wc9mW9v60o3XW4o3w==",
+  "dgSpecHash": "C+z/g1YceLC9rsvJLN+41s8iRTOIGiCLdr30IC65bqWfJjOzF6LN9viIRDSWEAHp1ETWdawaSryG7jufS/zzoA==",
   "success": true,
   "projectFilePath": "C:\\Users\\105\\Documents\\GitHub\\ServerProject\\WebApplication1\\Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\105\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\105\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\105\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\105\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\105\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

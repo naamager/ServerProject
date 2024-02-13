@@ -11,16 +11,18 @@ namespace Common.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        //public List<IFormFile> files { get; set; }
+        public List<IFormFile> files { get; set; }
 
         //  public virtual ICollection<Category> Categories { get; set; }
 
         public int NumOfViews { get; set; }
 
-    //    public virtual ICollection<Picture> Pictures { get; set; }
-      //  public virtual ICollection<Response> Responses { get; set; }
-        public string TheRecipe { get; set; }
-        
-       
+        public DateTime UploadDate { get; set; }
+        //  public virtual ICollection<Response> Responses { get; set; }
+        public string RecipeDescription { get; set; }
+        public string Preparation { get; set; }
+        public string Ingredients { get; set; }
+
+
     }
 }

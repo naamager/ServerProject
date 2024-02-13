@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Interface
 {
-    public interface IRepository <T> where T : class
+    public interface IRepository <T> 
     {
         public Task  Add(T item);
         public Task  Update(int id, T item);

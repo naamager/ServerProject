@@ -642,6 +642,7 @@
       "Repository/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.15",
+          "Swashbuckle.AspNetCore": "6.5.0",
           "System.Diagnostics.Tools": "4.3.0"
         },
         "runtime": {

@@ -41,8 +41,10 @@ namespace Repository.Repositories
 
         public async Task Update(int id, Category item)
         {
-            var category = this.context.Categories.FirstOrDefault(x => x.Id == id);
+            var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
             category.Name = item.Name;
+            category.Id = item.Id;
+            
             await this.context.save();
         }
     }
