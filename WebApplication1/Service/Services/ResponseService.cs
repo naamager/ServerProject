@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Common.Dtos;
+using Microsoft.OpenApi.Models;
 using Repository.Entity;
 using Repository.Interface;
 using Service.Interfaces;
@@ -20,9 +21,9 @@ namespace Service.Services
             this._repository = repository;
             this.mapper = map;
         }
-        public async Task Add(ResponseDto service)
+        public async Task<ResponseDto> Add(ResponseDto service)
         {
-            await _repository.Add(mapper.Map<Response>(service));
+        return mapper.Map<ResponseDto>(   await _repository.Add(mapper.Map<Response>(service)));
         }
 
         public async Task<List<ResponseDto>> GetAll()

@@ -16,10 +16,12 @@ namespace Repository.Repositories
         {
             this.context = context;
         }
-        public async Task Add(Category item)
+        public async Task<Category> Add(Category item)
         {
-            await this.context.Categories.AddAsync(item);
+            Category c = item;
+            await this.context.Categories.AddAsync(c);
             await this.context.save();
+            return c;
         }
 
         public async Task Delete(int id)
@@ -47,5 +49,7 @@ namespace Repository.Repositories
             
             await this.context.save();
         }
+
+       
     }
 }

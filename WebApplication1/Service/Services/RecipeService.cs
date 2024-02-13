@@ -21,9 +21,9 @@ namespace Service.Services
             this._repository = repository;
             this.mapper = map;
         }
-        public async Task Add(RecipeDto service)
+        public async Task<RecipeDto> Add(RecipeDto service)
         {
-           await _repository.Add(mapper.Map<Recipe>(service));
+          return mapper.Map<RecipeDto>( await _repository.Add(mapper.Map<Recipe>(service)));
         }
 
         public async Task<List<RecipeDto>> GetAll()

@@ -35,9 +35,9 @@ namespace RecipeSite.Controllers
 
     // POST api/<CategoryController>
     [HttpPost]
-    public async Task Post([FromBody] CategoryDto value)
+    public async Task<ActionResult> Post([FromBody] CategoryDto value)
     {
-        await service.Add(value);
+      return Ok(await service.Add(value));
     }
 
     // PUT api/<CategoryController>/5

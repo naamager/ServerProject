@@ -9,7 +9,7 @@ namespace Repository.Interface
 {
     public interface IRepository <T> 
     {
-        public Task  Add(T item);
+        public Task<T>  Add(T item);
         public Task  Update(int id, T item);
         public Task  Delete(int id);
         public Task <T> GetById(int id);

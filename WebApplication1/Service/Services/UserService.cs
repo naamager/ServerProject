@@ -20,9 +20,9 @@ namespace Service.Services
             this._repository = repository;
             this.mapper = map;
         }
-        public async Task Add(UserDto service)
+        public async Task<UserDto> Add(UserDto service)
         {
-            await _repository.Add(mapper.Map<User>(service));
+         return mapper.Map<UserDto>(   await _repository.Add(mapper.Map<User>(service)));
         }
 
         public async Task< List<UserDto>> GetAll()
